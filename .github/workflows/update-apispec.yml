@@ -1,0 +1,42 @@
+name: Update apispec Formula
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-apispec-formula
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Update Formula from latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/update-apispec-formula.sh
+
+      - name: Commit Formula update
+        run: |
+          set -eu
+
+          if git diff --quiet -- Formula/apispec.rb; then
+            echo "Formula already up to date."
+            exit 0
+          fi
+
+          # shellcheck disable=SC2016
+          version="$(ruby -ne 'puts $1 if /version "([^"]+)"/' Formula/apispec.rb)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/apispec.rb
+          git commit -m "Update apispec to ${version}"
+          git push
