@@ -1,20 +1,20 @@
 class Apispec < Formula
   desc "Agent-friendly OpenAPI extraction CLI"
   homepage "https://github.com/Showichiro/moon_openapi_cli"
-  version "0.1.3"
+  version "0.1.4"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.3/apispec-v0.1.3-macos-arm64"
-      sha256 "49b28b2ef4cf9b3c827bec175f0634759009886d7e6b932b50cc798a9f7902d6"
+      url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.4/apispec-v0.1.4-macos-arm64"
+      sha256 "d13f2df0a4739597a73e006d498ef24aa690892cf5a053663816d4138ccaf9b0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.3/apispec-v0.1.3-linux-x64"
-      sha256 "081db150ac1d813d30c1d88df9c952f449f465227e28085a7d45c26ad5429e18"
+      url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.4/apispec-v0.1.4-linux-x64"
+      sha256 "6289899818e78e95965792f9c41aef9b2e213e565e2bcb6c6139ff8f72843eec"
     end
   end
 
