@@ -7,14 +7,14 @@ class Apispec < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.4/apispec-v0.1.4-macos-arm64"
-      sha256 "d13f2df0a4739597a73e006d498ef24aa690892cf5a053663816d4138ccaf9b0"
+      sha256 "ed133f7dade62580eb556a6fdddc57366e974cf9a72d3e2e666b43108108ec94"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/Showichiro/moon_openapi_cli/releases/download/v0.1.4/apispec-v0.1.4-linux-x64"
-      sha256 "6289899818e78e95965792f9c41aef9b2e213e565e2bcb6c6139ff8f72843eec"
+      sha256 "1a565fcbb42b4cf968b30787e1af0b2732cc35f51b8735a13b21bdb01c01353b"
     end
   end
 
