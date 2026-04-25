@@ -28,7 +28,9 @@ jobs:
         run: |
           set -eu
 
-          if git diff --quiet -- Formula/trpg.rb; then
+          git add Formula/trpg.rb
+
+          if git diff --cached --quiet -- Formula/trpg.rb; then
             echo "Formula already up to date."
             exit 0
           fi
@@ -36,6 +38,5 @@ jobs:
           version="$(ruby -ne 'puts $1 if /version "([^"]+)"/' Formula/trpg.rb)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Formula/trpg.rb
           git commit -m "Update trpg to ${version}"
           git push
