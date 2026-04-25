@@ -11,3 +11,13 @@ brew install apispec
 
 The `apispec` Formula is updated by a scheduled GitHub Actions workflow that
 reads the latest release from `Showichiro/moon_openapi_cli`.
+
+## trpg
+
+```sh
+brew tap Showichiro/tap
+brew install trpg
+```
+
+The `trpg` Formula is updated by a scheduled GitHub Actions workflow that
+reads the latest release from `Showichiro/trpg.mbt`.
