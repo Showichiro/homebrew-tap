@@ -49,7 +49,7 @@ fi
 mkdir -p "$(dirname "$formula_path")"
 cat > "$formula_path" <<EOF
 class MysqlMcp < Formula
-  desc "MySQL MCP server for local stdio integrations"
+  desc "MCP server for local stdio integrations with MySQL"
   homepage "https://github.com/Showichiro/mysql-mcp"
   version "${version_number}"
   license "MIT"

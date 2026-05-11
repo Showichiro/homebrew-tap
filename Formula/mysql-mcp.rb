@@ -1,5 +1,5 @@
 class MysqlMcp < Formula
-  desc "MySQL MCP server for local stdio integrations"
+  desc "MCP server for local stdio integrations with MySQL"
   homepage "https://github.com/Showichiro/mysql-mcp"
   version "0.1.0"
   license "MIT"
